@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Message</title>
+    <title>Message Board</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Message Board</h1>
-    <div>
-        <a href="/new"><button>Drop a new message</button></a>
+    <div class="container">
+        <h1 class="title">Message Board</h1>
+        <div class="new-message-button">
+            <a href="/new"><button>Drop a new message</button></a>
+        </div>
+
+    </div>
+    <div class="messages">
         {% for message in messages %}
-            <div>
-                <h2>{{ message.name }}</h2>
-                <p>{{ message.text }}</p>
-                <small>{{ message.added }}</small>
+            <div class="message-card">
+                <h2 class="message-name">{{ message.name }}</h2>
+                <p class="message-text">{{ message.text }}</p>
+                <small class="message-date">{{ message.added }}</small>
             </div>
             <hr>
         {% endfor %}
-
     </div>
 </body>
 </html>

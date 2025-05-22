@@ -1,11 +1,30 @@
-<form method="post" action="/new">
-    <div>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name">
-        <label for="message">Message</label>
-        <input type="text" id="message" name="text">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>New Message - Message Board</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-page-container">
+        <div class="form-card">
+            <h1 class="form-title">Drop a New Message</h1>
+            <form method="post" action="/new" class="message-form">
+                <div class="form-group">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required placeholder="e.g., Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea id="message" name="text" class="form-textarea" rows="6" required placeholder="What's on your mind?"></textarea>
+                </div>
+                <div class="form-actions">
+                    <a href="/" class="button button-secondary">Cancel</a>
+                    <button type="submit" class="button button-primary">Post Message</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <button type="submit">
-        Submit
-    </button>
-</form>
+</body>
+</html>
