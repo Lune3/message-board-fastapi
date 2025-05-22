@@ -5,14 +5,17 @@
 </head>
 <body>
     <h1>Message Board</h1>
+    <div>
+        <a href="/new"><button>Drop a new message</button></a>
+        {% for message in messages %}
+            <div>
+                <h2>{{ message.name }}</h2>
+                <p>{{ message.text }}</p>
+                <small>{{ message.added }}</small>
+            </div>
+            <hr>
+        {% endfor %}
 
-    {% for message in messages %}
-        <div>
-            <h2>{{ message.name }}</h2>
-            <p>{{ message.text }}</p>
-            <small>{{ message.added }}</small>
-        </div>
-        <hr>
-    {% endfor %}
+    </div>
 </body>
 </html>
